@@ -1,0 +1,136 @@
+#amo-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.amo-hidden {
+    display: none !important;
+}
+
+.amo-initial-state-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+    padding: 40px 20px;
+    transition: opacity 0.5s ease-out;
+}
+
+.amo-initial-state-container h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.amo-initial-state-container h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.amo-initial-state-container p {
+    font-size: 1.1em;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.amo-form-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+#amo-topic-input {
+    flex-grow: 1;
+    border: none;
+    padding: 20px;
+    font-size: 1.2em;
+    outline: none;
+}
+
+#amo-generate-btn {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 0 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#amo-generate-btn:hover {
+    background-color: #0056b3;
+}
+
+.amo-progress-bar {
+    width: 80%;
+    max-width: 500px;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.amo-progress-bar-inner {
+    height: 100%;
+    width: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+    animation: amo-loading-animation 2s infinite ease-in-out;
+}
+
+@keyframes amo-loading-animation {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#amo-result-container {
+    width: 100%;
+}
+
+.amo-error {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #856404;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .amo-initial-state-container h1 {
+        font-size: 2em;
+    }
+
+    .amo-form-wrapper {
+        flex-direction: column;
+    }
+
+    #amo-topic-input {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    #amo-generate-btn {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+}

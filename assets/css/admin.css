@@ -1,0 +1,460 @@
+.amo-admin-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.amo-admin-main {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.amo-admin-sidebar {
+    width: 300px;
+}
+
+.amo-sidebar-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.amo-sidebar-box h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #23282d;
+}
+
+.amo-sidebar-box p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.amo-sidebar-box ul {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.amo-sidebar-box ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.amo-error {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    color: #856404;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+/* Dashboard Actions */
+.amo-dashboard-actions {
+    margin: 20px 0;
+}
+
+.view-debug-logs-btn {
+    font-size: 14px;
+    height: auto;
+    padding: 8px 16px;
+}
+
+.view-debug-logs-btn .dashicons {
+    line-height: 20px;
+}
+
+/* Debug Logs Modal */
+.amo-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
+}
+
+.amo-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 100001;
+}
+
+.amo-modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    width: 95%;
+    max-width: 1400px;
+    max-height: 90vh;
+    z-index: 100002;
+    display: flex;
+    flex-direction: column;
+}
+
+.amo-modal-header {
+    padding: 20px;
+    border-bottom: 2px solid #f0f0f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.amo-modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.amo-log-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: #f0f0f1;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.amo-modal-close {
+    background: #dc3232;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.amo-modal-close:hover {
+    background: #a00;
+}
+
+.amo-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Log Filters */
+.amo-log-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #e0e0e0;
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #2271b1;
+    background: #f6f7f7;
+}
+
+.filter-btn.active {
+    background: #2271b1;
+    color: white;
+    border-color: #2271b1;
+}
+
+/* Logs Table */
+.amo-logs-table-container {
+    overflow-x: auto;
+}
+
+.amo-logs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.amo-logs-table thead {
+    background: #f0f0f1;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.amo-logs-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.amo-logs-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f1;
+    vertical-align: middle;
+}
+
+.amo-logs-table tbody tr:hover {
+    background: #f6f7f7;
+}
+
+/* Severity Colors */
+.severity-critical {
+    border-left: 4px solid #dc3232;
+}
+
+.severity-high {
+    border-left: 4px solid #ff9800;
+}
+
+.severity-medium {
+    border-left: 4px solid #ffeb3b;
+}
+
+.severity-success {
+    border-left: 4px solid #46b450;
+}
+
+.severity-low {
+    border-left: 4px solid #2196f3;
+}
+
+/* Type Badges */
+.type-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.type-quota { background: #fee2e2; color: #991b1b; }
+.type-invalid_key { background: #ffedd5; color: #9a3412; }
+.type-timeout { background: #fef3c7; color: #92400e; }
+.type-network { background: #dbeafe; color: #1e3a8a; }
+.type-fatal { background: #fee2e2; color: #991b1b; }
+.type-warning { background: #fef3c7; color: #92400e; }
+.type-database { background: #e0e7ff; color: #3730a3; }
+.type-amo_error { background: #ffedd5; color: #9a3412; }
+.type-success { background: #d1fae5; color: #065f46; }
+.type-info { background: #e0f2fe; color: #075985; }
+
+/* Table Cells */
+.log-time {
+    white-space: nowrap;
+    font-size: 13px;
+    color: #666;
+}
+
+.log-severity {
+    text-align: center;
+    font-size: 20px;
+}
+
+.log-message {
+    font-family: monospace;
+    font-size: 12px;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.log-key {
+    font-family: monospace;
+    font-size: 12px;
+    color: #666;
+}
+
+.view-details-btn {
+    background: #2271b1;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.view-details-btn:hover {
+    background: #135e96;
+}
+
+/* Detail Modal */
+.amo-log-detail-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100010;
+}
+
+.amo-detail-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    z-index: 100011;
+}
+
+.detail-header {
+    padding: 20px;
+    border-bottom: 2px solid #f0f0f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+}
+
+.detail-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.detail-close {
+    background: #dc3232;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.detail-close:hover {
+    background: #a00;
+}
+
+.detail-body {
+    padding: 20px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.detail-section p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.log-message-full {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.problem-text {
+    color: #dc3232;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.solution-section {
+    background: #e7f7ff;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #2196f3;
+}
+
+.solution-text {
+    color: #0c5460;
+    font-size: 14px;
+}
+
+.action-section {
+    background: #d1fae5;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #10b981;
+}
+
+.action-text {
+    color: #065f46;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@media (max-width: 782px) {
+    .amo-admin-container {
+        flex-direction: column;
+    }
+
+    .amo-admin-sidebar {
+        width: 100%;
+    }
+    
+    .amo-modal-content {
+        width: 98%;
+        max-height: 95vh;
+    }
+    
+    .amo-detail-content {
+        width: 95%;
+    }
+    
+    .amo-log-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .amo-logs-table {
+        font-size: 12px;
+    }
+    
+    .amo-logs-table th,
+    .amo-logs-table td {
+        padding: 8px;
+    }
+}
